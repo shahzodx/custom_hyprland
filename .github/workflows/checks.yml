@@ -1,0 +1,32 @@
+name: Check dotfiles
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Installer tests
+        run: python3 -B -m unittest discover -s tests -v
+      - name: Waybar utility tests
+        run: python3 -B -m unittest discover -s config/waybar/tests -v
+      - name: Python and Bash syntax
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import ast
+          from pathlib import Path
+          import subprocess
+          for path in Path('.').rglob('*.py'):
+              if '.git' not in path.parts:
+                  ast.parse(path.read_text(), filename=str(path))
+          for path in Path('.').rglob('*.sh'):
+              subprocess.run(['bash', '-n', str(path)], check=True)
+          PY

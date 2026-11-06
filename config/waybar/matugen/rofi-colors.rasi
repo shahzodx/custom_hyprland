@@ -1,0 +1,5 @@
+* {
+    text: {{colors.on_surface.dark.hex}};
+    muted: {{colors.on_surface_variant.dark.hex}};
+    accent: {{colors.primary.dark.hex}};
+}

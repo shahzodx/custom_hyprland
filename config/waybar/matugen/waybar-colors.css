@@ -1,0 +1,6 @@
+@define-color wallpaper-accent {{colors.primary.dark.hex}};
+@define-color wallpaper-accent-text {{colors.on_primary.dark.hex}};
+@define-color wallpaper-muted {{colors.on_surface_variant.dark.hex}};
+@define-color wallpaper-text {{colors.on_surface.dark.hex}};
+@define-color wallpaper-warning {{colors.tertiary.dark.hex}};
+@define-color wallpaper-critical {{colors.error.dark.hex}};

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0" stop-color="#1728a0"/>
+      <stop offset="0.34" stop-color="#3435bd"/>
+      <stop offset="0.68" stop-color="#7441c6"/>
+      <stop offset="1" stop-color="#d56cae"/>
+    </linearGradient>
+    <radialGradient id="pinkGlow" cx="82%" cy="41%" r="53%">
+      <stop offset="0" stop-color="#ff9abb" stop-opacity=".9"/>
+      <stop offset=".48" stop-color="#c766c5" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#5a43bb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="upperWave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#091450"/>
+      <stop offset=".46" stop-color="#101c70"/>
+      <stop offset="1" stop-color="#2a37bb"/>
+    </linearGradient>
+    <linearGradient id="middleWave" x1="0" y1="0" x2="1" y2=".35">
+      <stop offset="0" stop-color="#0a144c"/>
+      <stop offset=".53" stop-color="#20329e"/>
+      <stop offset="1" stop-color="#4935bd"/>
+    </linearGradient>
+    <linearGradient id="lowerWave" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#070d34"/>
+      <stop offset=".55" stop-color="#0b164c"/>
+      <stop offset="1" stop-color="#142a82"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="1080" fill="url(#pinkGlow)"/>
+
+
+  <!-- Blue-violet ridge turns upward toward the right edge. -->
+  <path fill="url(#middleWave)" d="M0 236c241-8 427 112 620 235 216 137 376 207 591 163 245-50 416-264 709-354v800H0z"/>
+
+  <!-- Deep navy foreground wave leaves a calm area behind the account panel. -->
+  <path fill="url(#lowerWave)" d="M0 592c202-65 399-90 596-26 194 64 341 181 541 203 213 23 396-59 563-168 82-53 151-97 220-122v601H0z"/>
+
+  <path fill="#6478ed" opacity=".27" d="M0 565c194-56 390-66 573-1 168 59 294 165 460 190 210 31 384-46 546-148 128-80 229-140 341-167v116c-174 51-279 172-456 255-191 89-376 94-570 27C665 765 512 622 329 600 218 587 105 605 0 651z"/>
+</svg>

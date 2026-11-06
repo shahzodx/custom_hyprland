@@ -1,0 +1,32 @@
+[config]
+mode = "dark"
+scheme = "content"
+
+[config.wallpaper]
+set = false
+command = "awww"
+arguments = ["img"]
+
+[templates.waybar]
+input_path = "@HOME@/.config/waybar/matugen/waybar-colors.css"
+output_path = "@HOME@/.config/waybar/wallpaper-colors.css"
+
+[templates.rofi]
+input_path = "@HOME@/.config/waybar/matugen/rofi-colors.rasi"
+output_path = "@HOME@/.config/waybar/wallpaper-picker-colors.rasi"
+
+[templates.desktop]
+input_path = "@HOME@/.config/waybar/matugen/desktop-colors.css"
+output_path = "@HOME@/.config/waybar/desktop-colors.css"
+
+[templates.kitty]
+input_path = "@HOME@/.config/waybar/matugen/kitty-colors.conf"
+output_path = "@HOME@/.config/kitty/wallpaper-colors.conf"
+
+[templates.dunst]
+input_path = "@HOME@/.config/waybar/matugen/dunst-colors.conf"
+output_path = "@HOME@/.config/dunst/dunstrc.d/90-wallpaper.conf"
+
+[templates.qt]
+input_path = "@HOME@/.config/waybar/matugen/qt-colors.conf"
+output_path = "@HOME@/.config/qt6ct/colors/Wallpaper.conf"

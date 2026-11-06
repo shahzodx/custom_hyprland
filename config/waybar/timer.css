@@ -1,0 +1,44 @@
+* {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #c1c6ce;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+}
+window { background: transparent; }
+#timer-card {
+  background: #191c21;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 18px;
+}
+#timer-title { font-weight: 500; color: #d8dde5; }
+#timer-subtitle, .muted { color: #858e9b; font-size: 11px; }
+#timer-digits {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 42px;
+  font-weight: 400;
+  color: #e0e5ed;
+}
+button {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+  padding: 8px;
+  min-height: 0;
+  min-width: 0;
+}
+button:hover { background: rgba(255, 255, 255, 0.08); }
+button.chosen { border-color: #647b80; background: rgba(151, 183, 180, 0.09); }
+button:disabled { opacity: 0.45; }
+#timer-close { background: transparent; border: none; padding: 3px; }
+#timer-primary { background: #afc6c2; color: #1b2726; border-color: transparent; font-weight: 500; }
+#timer-primary label { color: #1b2726; }
+#timer-primary:hover { background: #c0d3cf; }
+spinbutton { background: #22262d; border: 1px solid #343b44; border-radius: 6px; }
+spinbutton entry { background: transparent; padding: 5px; min-width: 35px; }
+spinbutton button { padding: 5px; border: none; background: transparent; }
+progressbar trough { min-height: 3px; background: #2d333c; border: none; border-radius: 3px; }
+progressbar progress { min-height: 3px; background: #9cb9b4; border: none; border-radius: 3px; }
+#timer-hint { color: #697381; font-size: 9px; }

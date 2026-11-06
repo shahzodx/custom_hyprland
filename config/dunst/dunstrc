@@ -1,0 +1,46 @@
+[global]
+    width = 360
+    height = 110
+    origin = top-right
+    offset = (16, 62)
+    font = Inter 10
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    word_wrap = yes
+    ellipsize = end
+    ignore_newline = no
+    stack_duplicates = yes
+    hide_duplicate_count = no
+    indicate_hidden = yes
+    separator_color = frame
+    separator_height = 1
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 8
+    frame_width = 1
+    frame_color = "#3a3c3d"
+    gap_size = 8
+    corner_radius = 9
+    icon_position = left
+    max_icon_size = 32
+    timeout = 6
+
+[urgency_low]
+    background = "#202223"
+    foreground = "#929596"
+    frame_color = "#343637"
+    timeout = 4
+
+[urgency_normal]
+    background = "#202223"
+    foreground = "#dedfdf"
+    frame_color = "#3a3c3d"
+    timeout = 6
+
+[urgency_critical]
+    background = "#292b2c"
+    foreground = "#f0f0f0"
+    frame_color = "#aeb0b0"
+    timeout = 0

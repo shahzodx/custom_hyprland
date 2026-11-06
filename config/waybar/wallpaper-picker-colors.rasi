@@ -1,0 +1,5 @@
+* {
+    text: #e0e3e8;
+    muted: #c1c7ce;
+    accent: #96ccf8;
+}

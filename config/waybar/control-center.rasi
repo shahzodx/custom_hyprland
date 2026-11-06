@@ -1,0 +1,82 @@
+@theme "/dev/null"
+
+configuration {
+    show-icons: true;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    font: "Inter 10";
+    background-color: transparent;
+    text-color: #c1c6ce;
+}
+
+window {
+    location: northeast;
+    anchor: northeast;
+    x-offset: -12px;
+    y-offset: 36px;
+    width: 258px;
+    padding: 10px;
+    border: 1px;
+    border-color: #ffffff12;
+    border-radius: 12px;
+    background-color: #191c21fa;
+}
+
+mainbox {
+    orientation: vertical;
+    children: [ inputbar, listview ];
+    spacing: 6px;
+}
+
+inputbar {
+    children: [ prompt ];
+    padding: 5px 10px 9px;
+}
+
+prompt {
+    font: "Inter Medium 9";
+    text-color: #7e8794;
+}
+
+listview {
+    columns: 1;
+    lines: 4;
+    spacing: 3px;
+    fixed-height: true;
+    dynamic: false;
+    expand: false;
+    scrollbar: false;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+    spacing: 12px;
+    padding: 10px;
+    border: 1px;
+    border-color: transparent;
+    border-radius: 7px;
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: #ffffff09;
+    border-color: #ffffff08;
+    text-color: #eceff3;
+}
+
+element-icon {
+    expand: false;
+    size: 16px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    expand: true;
+    markup: true;
+    vertical-align: 0.5;
+}

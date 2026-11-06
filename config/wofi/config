@@ -1,0 +1,16 @@
+# Compact application launcher, styled to match the gray Waybar island.
+width=480
+height=400
+location=center
+show=drun
+prompt=
+allow_images=true
+image_size=22
+insensitive=true
+allow_markup=false
+no_actions=true
+gtk_dark=true
+hide_scroll=true
+term=kitty
+columns=1
+matching=fuzzy

@@ -1,0 +1,69 @@
+@import "wallpaper-picker-colors.rasi"
+
+configuration {
+    show-icons: true;
+    matching: "fuzzy";
+    hover-select: false;
+    sorting-method: "fzf";
+}
+
+* {
+    bg: #17191de8;
+    card: #ffffff08;
+    border: #ffffff20;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    width: 980px;
+    location: center;
+    anchor: center;
+    border: 1px;
+    border-color: @border;
+    border-radius: 20px;
+    background-color: @bg;
+    padding: 14px;
+}
+
+mainbox {
+    children: [ "listview" ];
+    background-color: transparent;
+}
+
+listview {
+    columns: 3;
+    lines: 2;
+    flow: horizontal;
+    fixed-columns: false;
+    fixed-height: false;
+    dynamic: true;
+    spacing: 12px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    children: [ element-icon ];
+    orientation: vertical;
+    padding: 7px;
+    border: 1px;
+    border-color: transparent;
+    border-radius: 14px;
+    background-color: @card;
+}
+
+element-icon {
+    enabled: true;
+    size: 300px;
+    border-radius: 9px;
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: #ffffff14;
+    border-color: @accent;
+}
+
+element normal {
+    background-color: transparent;
+}

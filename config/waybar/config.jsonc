@@ -1,0 +1,73 @@
+// Minimal, low-distraction Waybar for Hyprland.
+{
+  "mode": "dock",
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 4,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "exclusive": true,
+  "fixed-center": true,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/timer",
+    "custom/todo",
+    "custom/app-usage",
+    "custom/quick-settings",
+    "custom/battery"
+  ],
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "all-outputs": false,
+    "show-special": false
+  },
+  "custom/quick-settings": {
+    "exec": "printf '{\"text\":\" \",\"tooltip\":\"Wi-Fi · Bluetooth · звук · музыка\"}'",
+    "return-type": "json",
+    "format": "{text}",
+    "interval": "once",
+    "on-click": "@HOME@/.config/waybar/scripts/control-center.sh"
+  },
+  "custom/battery": {
+    "exec": "@HOME@/.config/waybar/scripts/battery-status.sh",
+    "return-type": "json",
+    "interval": 1
+  },
+  "clock": {
+    "format": "{:%d.%m.%Y · %H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "interval": 30
+  },
+  "custom/todo": {
+    "exec": "python3 @HOME@/.config/waybar/scripts/todo.py status",
+    "return-type": "json",
+    "format": " ",
+    "escape": true,
+    "interval": 10,
+    "on-click": "python3 @HOME@/.config/waybar/scripts/todo.py menu"
+  },
+  "custom/app-usage": {
+    "exec": "python3 @HOME@/.config/waybar/scripts/app-usage.py status",
+    "return-type": "json",
+    "format": " ",
+    "escape": true,
+    "interval": 10,
+    "on-click": "python3 @HOME@/.config/waybar/scripts/app-usage.py menu"
+  },
+  "custom/timer": {
+    "exec": "@HOME@/.config/waybar/scripts/work-timer.py status",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "@HOME@/.config/waybar/scripts/work-timer.py menu"
+  }
+}

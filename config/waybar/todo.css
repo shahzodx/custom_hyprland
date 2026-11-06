@@ -1,0 +1,31 @@
+@import url("desktop-colors.css");
+
+#todo-dismiss-area { background: transparent; }
+#todo-window { background: transparent; color: @panel-text; font-family: "Inter", "Noto Sans", sans-serif; font-size: 12px; }
+#todo-window * { box-shadow: none; text-shadow: none; outline: none; }
+#todo-card { background: @panel-bg; border: 2px solid @panel-border; border-radius: 0; padding: 20px; }
+#todo-title { color: @panel-text; font-size: 16px; font-weight: 600; }
+#todo-window .muted { color: @panel-muted; font-size: 10px; }
+#todo-window button { background: alpha(@panel-text, 0.035); color: @panel-muted; border: 1px solid transparent; border-radius: 0; padding: 7px 9px; min-height: 0; min-width: 0; }
+#todo-window button:hover { color: @panel-text; background: alpha(@panel-accent, 0.1); }
+#todo-window button:checked { color: @panel-accent; background: alpha(@panel-accent, 0.13); border-color: alpha(@panel-accent, 0.3); }
+#todo-window button:focus { border-color: @panel-accent; }
+#todo-window button:disabled { opacity: 0.4; }
+#todo-window #todo-close { background: transparent; border: none; padding: 3px; }
+#todo-window entry { background: @panel-card; color: @panel-text; border: 1px solid @panel-border; border-radius: 0; padding: 8px 10px; min-height: 0; caret-color: @panel-accent; }
+#todo-window entry:focus { border-color: @panel-accent; }
+#todo-window entry selection { background: @panel-accent; color: @panel-on-accent; }
+#todo-window #todo-add { color: @panel-on-accent; background: @panel-accent; padding: 8px 12px; }
+#todo-window #todo-add:hover { background: shade(@panel-accent, 1.08); }
+#todo-window .task-row { padding: 7px 6px; background: alpha(@panel-text, 0.025); }
+#todo-window .task-action { padding: 5px; background: transparent; }
+#todo-window .task-action image { -gtk-icon-shadow: none; }
+#todo-window .completed { color: alpha(@panel-muted, 0.65); }
+#todo-window checkbutton { padding: 0; }
+#todo-window checkbutton check { min-width: 14px; min-height: 14px; border: 1px solid @panel-border; border-radius: 0; background: @panel-card; color: @panel-on-accent; }
+#todo-window checkbutton check:checked { background: @panel-accent; border-color: @panel-accent; }
+#todo-empty { color: @panel-muted; padding: 24px 6px; font-size: 11px; }
+#todo-footer { border-top: 1px solid alpha(@panel-text, 0.08); padding-top: 8px; }
+#todo-window #todo-undo { padding: 3px 6px; font-size: 10px; }
+#todo-window scrollbar { background: transparent; }
+#todo-window scrollbar slider { background: alpha(@panel-text, 0.18); min-width: 4px; border: none; }

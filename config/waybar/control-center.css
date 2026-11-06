@@ -1,0 +1,27 @@
+@import url("desktop-colors.css");
+
+#control-center { background: transparent; color: #c9cbd0; border: none; border-radius: 0; box-shadow: none; font-family: Inter, sans-serif; font-size: 11px; }
+#control-center box { background: transparent; }
+#control-center #panel-surface { background: #191b1e; border: 1px solid #34363b; border-radius: 10px; }
+#control-center image { -gtk-icon-shadow: none; }
+#control-center label { color: #c9cbd0; }
+#control-center .heading { font-size: 12px; font-weight: 500; color: #999da6; }
+#control-center .muted { color: #858a94; font-size: 10px; }
+#control-center .track { font-weight: 500; font-size: 11px; }
+#control-center button { background: transparent; color: #a4a8b0; border: none; border-radius: 5px; box-shadow: none; text-shadow: none; padding: 5px; min-height: 16px; min-width: 16px; }
+#control-center button:hover { background: rgba(255, 255, 255, 0.035); color: #e0e2e6; }
+#control-center button:focus { box-shadow: inset 0 0 0 1px alpha(@panel-accent, 0.3); }
+#control-center button:disabled { opacity: 0.35; }
+#control-center .tile { padding: 9px 7px; background: rgba(255, 255, 255, 0.016); }
+#control-center .tile.active { color: @panel-accent; background: alpha(@panel-accent, 0.07); }
+#control-center .tile.active label { color: @panel-accent; }
+#control-center .tile-caption { font-size: 10px; }
+#control-center .card { padding: 2px 0; }
+#control-center .media { padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.043); }
+#control-center .footer { padding-top: 9px; border-top: 1px solid rgba(255, 255, 255, 0.043); }
+#control-center scale { padding: 8px 0; }
+#control-center scale trough { background: #393c42; min-height: 3px; border: none; border-radius: 3px; }
+#control-center scale highlight { background: #b4b7be; border: none; border-radius: 3px; }
+#control-center scale slider { background: #d5d7dc; border: none; box-shadow: none; min-width: 9px; min-height: 9px; margin: -3px 0; }
+#control-center .percentage { color: #858a94; font-family: monospace; font-size: 10px; }
+#control-center combobox button { padding: 2px 5px; min-height: 12px; font-size: 10px; }

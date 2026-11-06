@@ -1,0 +1,40 @@
+@import url("desktop-colors.css");
+
+#usage-dismiss-area { background: transparent; }
+
+#app-usage {
+  background: transparent;
+  color: @panel-text;
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-size: 12px;
+}
+#app-usage * { box-shadow: none; text-shadow: none; outline: none; }
+#usage-card {
+  background: @panel-bg;
+  border: 2px solid @panel-border;
+  border-radius: 0;
+  padding: 20px;
+}
+#usage-title { font-size: 13px; font-weight: 600; }
+#usage-total { font-family: "JetBrains Mono", monospace; font-size: 28px; color: @panel-accent; }
+#app-usage .muted { color: @panel-muted; font-size: 10px; }
+#app-usage .duration { font-family: "JetBrains Mono", monospace; color: @panel-muted; font-size: 11px; }
+#app-usage button {
+  background: alpha(@panel-text, 0.035);
+  color: @panel-muted;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 8px 10px;
+  min-height: 0;
+  min-width: 0;
+}
+#app-usage button:hover { background: alpha(@panel-accent, 0.1); }
+#app-usage button:checked { background: alpha(@panel-accent, 0.13); color: @panel-accent; border-color: alpha(@panel-accent, 0.3); }
+#app-usage button:focus { border-color: @panel-accent; }
+#app-usage #usage-close { background: transparent; border: none; padding: 3px; }
+#app-usage progressbar trough { min-height: 3px; background: alpha(@panel-text, 0.07); border: none; border-radius: 0; }
+#app-usage progressbar progress { min-height: 3px; background: @panel-accent; border: none; border-radius: 0; }
+#usage-footer { border-top: 1px solid alpha(@panel-text, 0.08); padding-top: 12px; }
+#usage-empty { color: @panel-muted; font-size: 11px; padding: 18px 0; }
+#app-usage scrollbar { background: transparent; }
+#app-usage scrollbar slider { background: alpha(@panel-text, 0.18); min-width: 4px; border: none; }

@@ -1,0 +1,180 @@
+@import url("desktop-colors.css");
+/* Neutral colours stay consistent when the wallpaper changes. */
+@define-color text #b9bdc5;
+@define-color muted #858b96;
+@define-color hover rgba(255, 255, 255, 0.06);
+
+* {
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  color: @text;
+  background: rgba(22, 24, 28, 0.92);
+}
+
+window#waybar > box {
+  padding: 0 10px;
+}
+
+tooltip {
+  color: @text;
+  background: #1c1f24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+tooltip label {
+  padding: 5px 8px;
+}
+
+#workspaces button {
+  color: @muted;
+  background: transparent;
+  min-width: 22px;
+  margin: 4px 1px;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+#workspaces button.active {
+  color: #d5d8de;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.urgent {
+  color: #e2b4ac;
+}
+
+#workspaces button:hover,
+#custom-quick-settings:hover,
+#clock:hover {
+  background: @hover;
+}
+
+#custom-quick-settings,
+#custom-battery,
+#clock {
+  margin: 4px 0;
+  padding: 0 7px;
+  border-radius: 4px;
+}
+
+#custom-quick-settings {
+  min-width: 15px;
+  background-image: url("icons/quick-settings.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+  opacity: 0.85;
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+#custom-battery {
+  color: @muted;
+  min-width: 30px;
+  padding-left: 24px;
+  background-image: url("icons/battery.svg");
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  background-size: 15px 15px;
+}
+
+#custom-battery.charging {
+  background-image: url("icons/battery-charging.svg");
+  animation: charging-bolt 2.4s ease-in-out infinite;
+}
+
+#custom-battery.plugged {
+  background-image: url("icons/battery-charging.svg");
+}
+
+/* Only the bolt changes brightness; the outline and percentage stay still. */
+@keyframes charging-bolt {
+  0% { background-image: url("icons/battery-charging.svg"); }
+  50% { background-image: url("icons/battery-charging-dim.svg"); }
+  100% { background-image: url("icons/battery-charging.svg"); }
+}
+
+#custom-battery.warning {
+  color: #c9b88f;
+}
+
+#custom-battery.critical {
+  color: #e2a39c;
+}
+
+#clock {
+  font-family: "JetBrains Mono", monospace;
+  color: @text;
+}
+
+#custom-quick-settings:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+  opacity: 1;
+}
+
+#custom-timer {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #afc6c2;
+  background-color: rgba(175, 198, 194, 0.06);
+  background-image: url("icons/settings-timer.svg");
+  background-repeat: no-repeat;
+  background-position: 7px center;
+  background-size: 12px 12px;
+  margin: 4px 3px;
+  padding: 0 8px 0 25px;
+  border-radius: 5px;
+}
+#custom-timer:hover { background-color: rgba(175, 198, 194, 0.12); }
+#custom-timer.paused { color: #858e9b; }
+#custom-timer.done { color: #c9b88f; }
+
+#custom-app-usage {
+  color: @panel-muted;
+  min-width: 15px;
+  background-color: alpha(@panel-accent, 0.06);
+  background-image: url("icons/app-usage.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+  margin: 4px 0;
+  padding: 0 7px;
+  border-radius: 4px;
+}
+#custom-app-usage:hover { background-color: alpha(@panel-accent, 0.13); color: @panel-accent; }
+#custom-app-usage.offline { opacity: 0.5; }
+#custom-app-usage.idle, #custom-app-usage.locked { color: @panel-muted; }
+
+#custom-todo {
+  min-width: 15px;
+  color: @panel-muted;
+  background-color: alpha(@panel-accent, 0.06);
+  background-image: url("icons/todo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+  margin: 4px 0;
+  padding: 0 7px;
+  border-radius: 4px;
+}
+#custom-todo:hover { background-color: alpha(@panel-accent, 0.13); }
+#custom-todo.has-tasks { background-color: alpha(@panel-accent, 0.11); }
+#custom-todo.empty { opacity: 0.8; }
+
+/* Wallpaper palette: quiet surfaces, shared accents. */
+window#waybar { background: alpha(@panel-bg, 0.94); color: @panel-text; }
+#clock { color: @panel-text; }
+#workspaces button { color: @panel-muted; }
+#workspaces button.active { color: @panel-accent; background: alpha(@panel-accent, 0.12); }
+#custom-timer { color: @panel-accent; background-color: alpha(@panel-accent, 0.07); }
+tooltip { color: @panel-text; background: @panel-card; border-color: @panel-border; }
