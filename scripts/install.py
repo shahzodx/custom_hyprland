@@ -72,9 +72,9 @@ def plan_files(home, profile):
     if profile == "laptop":
         source = ROOT / "profiles/laptop/monitors.lua"
         files[Path(".config/hypr/monitors.lua")] = (payload(source, home), 0o644)
-    wallpaper = Path("Pictures/wallpapers/dotfiles-default.png")
+    wallpaper = Path("Pictures/wallpapers/dotfiles-default.jpeg")
     if not exists(home / wallpaper):
-        files[wallpaper] = ((ROOT / "assets/wallpaper.png").read_bytes(), 0o644)
+        files[wallpaper] = ((ROOT / "assets/wallpaper.jpeg").read_bytes(), 0o644)
     plan = []
     for relative, (data, mode) in sorted(files.items()):
         target = home / relative

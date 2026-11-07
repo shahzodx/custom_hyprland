@@ -70,7 +70,7 @@ if [[ "${1:-}" == "--restore" ]]; then
     if [[ -L "${CURRENT_LINK}" && -f "${CURRENT_LINK}" ]]; then
         apply_wallpaper "$(readlink -f "${CURRENT_LINK}")"
     else
-        apply_wallpaper "${WALLPAPER_DIR}/dotfiles-default.png"
+        apply_wallpaper "${WALLPAPER_DIR}/dotfiles-default.jpeg"
     fi
     exit $?
 fi

@@ -1,11 +1,11 @@
-# Compact application launcher, styled to match the gray Waybar island.
-width=480
-height=400
+# Small, single-column launcher; shrink the list when filtering.
+width=400
+lines=6
 location=center
 show=drun
-prompt=
+prompt=Поиск…
 allow_images=true
-image_size=22
+image_size=18
 insensitive=true
 allow_markup=false
 no_actions=true
@@ -14,3 +14,7 @@ hide_scroll=true
 term=kitty
 columns=1
 matching=fuzzy
+filter_rate=35
+dynamic_lines=true
+close_on_focus_loss=true
+content_halign=fill

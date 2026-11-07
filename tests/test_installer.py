@@ -39,8 +39,8 @@ class InstallerTests(unittest.TestCase):
         value = config.read_text()
         self.assertNotIn("@HOME@", value)
         self.assertIn(str(self.home), value)
-        wallpaper = self.home / "Pictures/wallpapers/dotfiles-default.png"
-        self.assertEqual(wallpaper.read_bytes(), (ROOT / "assets/wallpaper.png").read_bytes())
+        wallpaper = self.home / "Pictures/wallpapers/dotfiles-default.jpeg"
+        self.assertEqual(wallpaper.read_bytes(), (ROOT / "assets/wallpaper.jpeg").read_bytes())
         self.assertIn('output = ""', (self.home / ".config/hypr/monitors.lua").read_text())
         self.assertTrue((self.home / ".config/waybar/scripts/wallpaper-picker.sh").stat().st_mode & 0o111)
         self.install()
@@ -54,7 +54,7 @@ class InstallerTests(unittest.TestCase):
         tasks = self.home / ".config/waybar/.todo/tasks.sqlite3"
         tasks.parent.mkdir(parents=True)
         tasks.write_bytes(b"private tasks")
-        wallpaper = self.home / "Pictures/wallpapers/dotfiles-default.png"
+        wallpaper = self.home / "Pictures/wallpapers/dotfiles-default.jpeg"
         wallpaper.parent.mkdir(parents=True)
         wallpaper.write_bytes(b"existing wallpaper")
         self.install()

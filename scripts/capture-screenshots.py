@@ -93,6 +93,14 @@ def capture(output):
             run("dunstctl", "set-paused", "true")
             dispatch(f"hl.dsp.focus({{workspace = {preview}}})")
             shot("01-desktop.png")
+            layers = json.loads(run("hyprctl", "layers", "-j"))
+            bars = [layer for level in layers[monitor["name"]]["levels"].values()
+                    for layer in level if layer.get("namespace") == "waybar"]
+            if bars:
+                bottom = max(layer["y"] + layer["h"] for layer in bars) - monitor["y"]
+                width = round(monitor["width"] / monitor["scale"])
+                run("grim", "-g", f'{monitor["x"]},{monitor["y"]} {width}x{bottom}',
+                    str(output / "05-waybar.png"))
             terminal = launch(["kitty", "--class", "dotfiles-preview", "--title", "Arch / Hyprland",
                                "--config", str(ROOT / "config/kitty/kitty.conf"),
                                "-o", "font_size=12", "-o", "remember_window_size=no",
@@ -115,9 +123,11 @@ def capture(output):
             shot("02-terminal.png")
             stop(terminal)
             time.sleep(0.3)
+            launcher_style = temp / "launcher.css"
+            launcher_style.write_text((ROOT / "config/wofi/style.css").read_text().replace("@HOME@", str(Path.home())))
             # A real Wofi window, populated with public demo entries only.
             launcher = launch(["wofi", "--dmenu", "--conf", str(ROOT / "config/wofi/config"),
-                               "--style", str(ROOT / "config/wofi/style.css"),
+                               "--style", str(launcher_style),
                                "--cache-file", "/dev/null", "--prompt", "Applications"],
                               text_input="Firefox\nKitty\nDolphin\nVisual Studio Code\nPavucontrol\nBluetooth Manager\n")
             shot("03-launcher.png")

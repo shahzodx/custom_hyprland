@@ -120,7 +120,7 @@ class Panel(Gtk.Application):
         GtkLayerShell.set_keyboard_mode(window, GtkLayerShell.KeyboardMode.ON_DEMAND)
         for edge in (GtkLayerShell.Edge.TOP, GtkLayerShell.Edge.RIGHT):
             GtkLayerShell.set_anchor(window, edge, True)
-        GtkLayerShell.set_margin(window, GtkLayerShell.Edge.TOP, 40)
+        GtkLayerShell.set_margin(window, GtkLayerShell.Edge.TOP, 8)
         GtkLayerShell.set_margin(window, GtkLayerShell.Edge.RIGHT, 12)
 
         surface = box(True, 0)

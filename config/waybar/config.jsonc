@@ -1,10 +1,10 @@
-// Minimal, low-distraction Waybar for Hyprland.
+// A compact edge-to-edge bar, with tools and system controls grouped separately.
 {
   "mode": "dock",
   "layer": "top",
   "position": "top",
-  "height": 28,
-  "spacing": 4,
+  "height": 30,
+  "spacing": 0,
   "margin-top": 0,
   "margin-left": 0,
   "margin-right": 0,
@@ -18,12 +18,17 @@
     "clock"
   ],
   "modules-right": [
-    "custom/timer",
-    "custom/todo",
-    "custom/app-usage",
-    "custom/quick-settings",
-    "custom/battery"
+    "group/tools",
+    "group/system"
   ],
+  "group/tools": {
+    "orientation": "horizontal",
+    "modules": ["custom/timer", "custom/todo", "custom/app-usage"]
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["custom/quick-settings", "custom/battery"]
+  },
   "hyprland/workspaces": {
     "format": "{id}",
     "on-click": "activate",
@@ -44,7 +49,7 @@
     "interval": 1
   },
   "clock": {
-    "format": "{:%d.%m.%Y · %H:%M}",
+    "format": "<span alpha='65%'>{0:%d.%m.%Y}</span>  <span weight='600'>{0:%H:%M}</span>",
     "tooltip-format": "{:%A, %d %B %Y}",
     "interval": 30
   },
@@ -67,6 +72,7 @@
   "custom/timer": {
     "exec": "@HOME@/.config/waybar/scripts/work-timer.py status",
     "return-type": "json",
+    "format": " {text}",
     "interval": 1,
     "on-click": "@HOME@/.config/waybar/scripts/work-timer.py menu"
   }

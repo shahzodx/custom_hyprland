@@ -1,73 +1,101 @@
-@import url("../waybar/desktop-colors.css");
+@import url("@HOME@/.config/waybar/desktop-colors.css");
+
+/* Compact, quiet surfaces; the wallpaper supplies only the text caret accent. */
 * {
   font-family: "Inter", "Noto Sans", sans-serif;
   font-size: 12px;
-  font-weight: 500;
-  color: #c4c6c6;
+  font-weight: 400;
+  color: #c9cdd4;
+  outline: none;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
 }
 
 window {
   margin: 0;
-  background-color: rgba(25, 26, 27, 0.97);
-  border: 1px solid #383a3b;
-  border-radius: 10px;
+  background-color: #14161a;
+  border: 1px solid #30333a;
+  border-radius: 8px;
 }
 
 #outer-box {
-  margin: 12px;
+  margin: 10px;
   padding: 0;
 }
 
 #input {
-  margin: 0 0 9px 0;
-  padding: 9px 12px;
-  color: #dedfdf;
-  background-color: #2a2c2d;
-  border: 1px solid #3a3c3d;
-  border-radius: 7px;
-  caret-color: #dedfdf;
-}
-
-#input:focus {
-  border-color: #777a7b;
+  min-height: 24px;
+  margin: 0 0 6px;
+  padding: 4px 7px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #e3e6eb;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2b2e35;
+  border-radius: 0;
+  caret-color: @panel-accent;
   box-shadow: none;
 }
 
-#inner-box,
+#input:focus {
+  border-bottom-color: #3b4049;
+  box-shadow: none;
+}
+
+#input image {
+  margin-right: 8px;
+  color: #7c828d;
+}
+
+#input selection {
+  color: #f0f2f5;
+  background-color: #3b414d;
+}
+
 #scroll,
-#text {
+#inner-box {
+  margin: 0;
+  padding: 0;
   background: transparent;
+  border: none;
 }
 
 #entry {
-  padding: 7px 10px;
-  margin: 2px 0;
-  border-radius: 6px;
+  min-height: 20px;
+  margin: 1px 0;
+  padding: 5px 8px;
   background: transparent;
-  transition: background-color 120ms ease;
+  border: none;
+  border-radius: 4px;
 }
 
 #entry:hover {
-  background-color: #2a2c2d;
+  background-color: #202329;
 }
 
 #entry:selected {
-  background-color: #c5c7c7;
+  background-color: #292d35;
+}
+
+#text {
+  margin: 0;
+  padding: 0;
+  color: #b8bec8;
+  background: transparent;
 }
 
 #entry:selected #text {
-  color: #171819;
+  color: #edf0f5;
+  font-weight: 400;
 }
 
 #img {
   margin-right: 9px;
+  background: transparent;
+  opacity: 0.85;
 }
 
-/* Wallpaper palette. */
-* { color: @panel-text; }
-window { background-color: alpha(@panel-bg, 0.98); border-color: @panel-border; }
-#input { color: @panel-text; background-color: @panel-card; border-color: @panel-border; caret-color: @panel-accent; }
-#input:focus { border-color: @panel-accent; }
-#entry:hover { background-color: @panel-card; }
-#entry:selected { background-color: @panel-accent; }
-#entry:selected #text { color: @panel-on-accent; }
+#expander-box {
+  background: transparent;
+}

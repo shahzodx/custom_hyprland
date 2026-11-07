@@ -110,7 +110,7 @@ def menu():
     GtkLayerShell.set_layer(window, GtkLayerShell.Layer.OVERLAY)
     GtkLayerShell.set_anchor(window, GtkLayerShell.Edge.TOP, True)
     GtkLayerShell.set_anchor(window, GtkLayerShell.Edge.RIGHT, True)
-    GtkLayerShell.set_margin(window, GtkLayerShell.Edge.TOP, 36)
+    GtkLayerShell.set_margin(window, GtkLayerShell.Edge.TOP, 8)
     GtkLayerShell.set_margin(window, GtkLayerShell.Edge.RIGHT, 12)
     GtkLayerShell.set_keyboard_mode(window, GtkLayerShell.KeyboardMode.ON_DEMAND)
     window.connect('destroy', Gtk.main_quit)
